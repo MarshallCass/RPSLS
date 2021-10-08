@@ -1,5 +1,6 @@
 from players import Players
 
-class Human:
-    def _init_(players):
-        pass
+class Human(Players):
+    def _init_(self):
+        self.person = []
+        super().__init__()

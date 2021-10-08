@@ -1,5 +1,6 @@
 from players import Players
 
-class Computer:
-    def _init_(Players):
-        pass
+class Computer(Players):
+    def _init_(self):
+        self.computer = "" 
+        super().__init__()
