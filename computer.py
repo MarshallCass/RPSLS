@@ -1,13 +1,16 @@
-from players import Players
+from gestures import Gestures
 
-class Computer(Players):
-    def _init_(self):
-        self.computer = "" 
+
+class Computer(Gestures):
+    def __init__(self, name):
+        self.computer = name
         super().__init__()
 
+    def create_computer(self):
+        computer = "Computer"
+        self.computer.append(computer)
 
 
-
-### Guesture selection validation
+# Guesture selection validation
 #     def guesture_input(self):
 #        random generation
