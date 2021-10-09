@@ -21,28 +21,33 @@ class Battle(Gestures):
         self.players = Players()
         self.players.create_player()
         self.players.create_computer()
-        self.player_1_gesture_selection()
-        self.player_2_gesture_selection()
-        self.computer_gesture_selection()
+        self.player_input()
         self.display_welcome()
 
-        # self.player_1_gesture_selction is being called from the parent class in gestures.py. it is giving errors at the moment.
-        # once we get player_1_gesture_selction appended to self.player_1_selction above. We can do the same thing for player 2's selection and the computer selction.
+    def player_input(self):
+        selection = False
+        player_selection = input(
+            "Press 1 for Player vs Player or 2 for Player vs Computer")
+        while selection == False:
+            if player_selection == "1":
+                self.player_vs_player()
+                selection = True
+            elif player_selection == "2":
+                self.player_vs_computer()
+                selection = True
+            else:
+                print("not valid input")
 
+          # run input again
 
-# Game player selection validation
+    def player_vs_player(self):
+        self.player_1_gesture_selection()
+        self.player_2_gesture_selection()
 
-    # def player_input(self):
-    #     player_selection = input(
-    #         "Press 1 for Player vs Player or 2 for Player vs Computer")
+        pass
 
-    #     if player_selection == "1":
+    def player_vs_computer(self):
+        self.player_1_gesture_selection()
+        self.computer_gesture_selection()
 
-    #        # AI Method
-    #     elif player_selection == "2":
-
-    #        # human on human
-    #     else:
-    #         self.player_input()
-
-    #       # run input again
+        pass
