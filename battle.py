@@ -12,11 +12,6 @@ class Battle(Gestures):
         self.player_1_selection = []
         self.player_2_selection = []
         self.computer_selection = []
-    # players_list should pass in one or 2 players
-    # computers_list should pass in 0 or 1 computer
-    # player_1_selection should pass in rock, paper, scissors, lizard, or spock
-    # player_2_selection should pass in rock, paper, scissors, lizard, or spock
-    # player_1 _selection should pass in rock, paper, scissors, lizard, or spock
 
     def display_welcome(self):
         print("Welcome to Rock Paper Scissors Lizard Spock!")
@@ -27,7 +22,8 @@ class Battle(Gestures):
         self.players.create_player()
         self.players.create_computer()
         self.player_1_gesture_selection()
-        self.display_welcome()
+        self.player_2_gesture_selection()
+        self.computer_gesture_selection()
         self.display_welcome()
 
         # self.player_1_gesture_selction is being called from the parent class in gestures.py. it is giving errors at the moment.
