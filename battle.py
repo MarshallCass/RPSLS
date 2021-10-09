@@ -27,6 +27,9 @@ class Battle(Gestures):
         self.players.create_player()
         self.players.create_computer()
         self.player_1_gesture_selection()
+        self.display_welcome()
+        self.display_welcome()
+
         # self.player_1_gesture_selction is being called from the parent class in gestures.py. it is giving errors at the moment.
         # once we get player_1_gesture_selction appended to self.player_1_selction above. We can do the same thing for player 2's selection and the computer selction.
 

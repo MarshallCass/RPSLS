@@ -4,21 +4,22 @@ class Gestures:
         pass
 
     def player_1_gesture_selection(self):
+        self.gesture_input = False
         self.gesture_selection = int(
             input('Player 1 choose: Rock-0, Paper-1, Scissors-2, Lizard-3, Spock-4'))
         while self.gesture_input != True:
-            if self.gesture_selection.isdigit(range(0, 4)):
+            if self.gesture_selection == 0 or self.gesture_selection == 1 or self.gesture_selection == 2 or self.gesture_selection == 3 or self.gesture_selection == 4:
                 self.gesture_input = True
                 print('this is ok number')
             else:
                 print('Your selection was invalid')
         if self.gesture_selection == 0:
-            self.player_1_selection.appead("Rock")
+            self.player_1_selection.append("Rock")
         elif self.gesture_selection == 1:
-            self.player_1_selection.appead("Paper")
+            self.player_1_selection.append("Paper")
         elif self.gesture_selection == 2:
-            self.player_1_selection.appead("Scissors")
+            self.player_1_selection.append("Scissors")
         elif self.gesture_selection == 3:
-            self.player_1_selection.appead("Lizard")
+            self.player_1_selection.append("Lizard")
         elif self.gesture_selection == 4:
-            self.player_1_selection.appead("Spock")
+            self.player_1_selection.append("Spock")
