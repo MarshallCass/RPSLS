@@ -42,9 +42,10 @@ class Battle(Gestures):
 
     def player_input(self):
         selection = False
-        player_selection = input(
-            "Press 1 for Player vs Player or 2 for Player vs Computer" " ")
+        player_selection = ""
         while selection == False:
+            player_selection = input(
+            "Press 1 for Player vs Player or 2 for Player vs Computer" " ")
             if player_selection == "1":
                 selection = True
                 self.player_vs_player()
@@ -53,6 +54,7 @@ class Battle(Gestures):
                 self.player_vs_computer()    
             else:
                 print("not valid input")
+               
 
     def player_vs_player(self):
         counter = 0

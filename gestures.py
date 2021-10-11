@@ -10,9 +10,10 @@ class Gestures:
     def player_1_gesture_selection(self):
 
         self.gesture_input = False
-        self.gesture_selection = int(
-            input('Player 1 choose: Rock-0, Spock-1, Paper-2, Lizard-3, Scissors-4' " "))
+        
         while self.gesture_input != True:
+            self.gesture_selection = int(
+            input('Player 1 choose: Rock-0, Spock-1, Paper-2, Lizard-3, Scissors-4' " "))
             if self.gesture_selection == 0 or self.gesture_selection == 1 or self.gesture_selection == 2 or self.gesture_selection == 3 or self.gesture_selection == 4:
                 self.gesture_input = True
                 print('this is ok number')
@@ -32,9 +33,10 @@ class Gestures:
 
     def player_2_gesture_selection(self):
         self.gesture_input = False
-        self.gesture_selection = int(
-            input('Player 2 choose: Rock-0, Spock-1, Paper-2, Lizard-3, Scissors-4' " "))
+        
         while self.gesture_input != True:
+            self.gesture_selection = int(
+            input('Player 2 choose: Rock-0, Spock-1, Paper-2, Lizard-3, Scissors-4' " "))
             if self.gesture_selection == 0 or self.gesture_selection == 1 or self.gesture_selection == 2 or self.gesture_selection == 3 or self.gesture_selection == 4:
                 self.gesture_input = True
                 print('this is ok number')
