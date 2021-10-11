@@ -26,7 +26,7 @@ class Battle(Gestures):
         self.player_input()
 
     def display_welcome(self):
-        print("Welcome to Rock Paper Scissors Lizard Spock!")
+        print("Welcome to Rock Spock Paper Lizard Scissors!")
 
 # ### Game play logic
 # # # Rock crushes Scissors 
