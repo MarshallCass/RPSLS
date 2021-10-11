@@ -22,21 +22,22 @@ class Battle(Gestures):
         self.players.create_player()
         self.players.create_computer()
         self.player_input()
+        self.display_welcome()
 
     def display_welcome(self):
         print("Welcome to Rock Paper Scissors Lizard Spock!")
 
 # ### Game play logic
-# # # Rock crushes Scissors 
-# # # Rock crushes Lizard 
-# # # Spock vaporizes Rock 
-# # # Spock smashes Scissors 
-# # # Paper disproves Spock 
-# # # Paper covers Rock 
-# # # Lizard eats Paper 
-# # # Lizard poisons Spock 
-# # # Scissors decapitates Lizard 
-# # # Scissors cuts Paper 
+# # # Rock crushes Scissors
+# # # Rock crushes Lizard
+# # # Spock vaporizes Rock
+# # # Spock smashes Scissors
+# # # Paper disproves Spock
+# # # Paper covers Rock
+# # # Lizard eats Paper
+# # # Lizard poisons Spock
+# # # Scissors decapitates Lizard
+# # # Scissors cuts Paper
 
     def player_input(self):
         selection = False
@@ -58,30 +59,31 @@ class Battle(Gestures):
 
         while self.player_1_points and self.player_2_points < 2:
 
-            self.number_difference = (int(self.player_1_gesture_selection) - int(self.player_2_gesture_selection)) % 5
+            self.number_difference = (
+                int(self.player_1_gesture_selection) - int(self.player_2_gesture_selection)) % 5
 
             if self.number_difference == 0:
-                   print("Tie try again!")
+                print("Tie try again!")
             elif self.number_difference == 1 or self.number_difference == 2:
-                    self.player_one_points + 1  
-                    print("Player 1 Wins") 
+                self.player_one_points + 1
+                print("Player 1 Wins")
             elif self.number_difference == 3 or self.number_difference == 4:
-                    self.player_two_points + 1
-                    print("Player 2 Wins")
+                self.player_two_points + 1
+                print("Player 2 Wins")
 
     def player_vs_computer(self):
         self.player_1_gesture_selection()
         self.computer_gesture_selection()
 
         while self.computer_points and self.player_1_points < 2:
-            self.number_difference = (int(self.computer_gesture_selection) - int(self.player_1_gesture_selection)) % 5   
+            self.number_difference = (
+                int(self.computer_gesture_selection) - int(self.player_1_gesture_selection)) % 5
 
             if self.number_difference == 0:
-                   print("Tie try again!")
+                print("Tie try again!")
             elif self.number_difference == 1 or self.number_difference == 2:
-                    self.computer_points + 1  
-                    print("Computer Wins") 
+                self.computer_points + 1
+                print("Computer Wins")
             elif self.number_difference == 3 or self.number_difference == 4:
-                    self.player_one_points + 1
-                    print("Human Wins")
-
+                self.player_one_points + 1
+                print("Human Wins")
