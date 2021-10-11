@@ -1,8 +1,8 @@
+from typing import Counter
 from gestures import Gestures
 from human import Human
 from computer import Computer
 from players import Players
-import random
 
 
 class Battle(Gestures):
@@ -55,35 +55,49 @@ class Battle(Gestures):
                 print("not valid input")
 
     def player_vs_player(self):
-        self.player_1_gesture_selection()
-        self.player_2_gesture_selection()
-
+        counter = 0
         while self.player_1_points <2 and self.player_2_points < 2:
-
-            self.number_difference = (int(self.player_1_selection) - int(self.player_2_selection)) % 5
+            self.player_1_gesture_selection()
+            self.player_2_gesture_selection()
+            self.number_difference = (self.player_1_selection[counter] - self.player_2_selection[counter]) % 5   
 
             if self.number_difference == 0:
                    print("Tie try again!")
+                   counter += 1
             elif self.number_difference == 1 or self.number_difference == 2:
-                    self.player_one_points + 1  
+                    self.player_1_points += 1  
                     print("Player 1 Wins") 
+                    counter += 1
             elif self.number_difference == 3 or self.number_difference == 4:
-                    self.player_two_points + 1
+                    self.player_2_points += 1
                     print("Player 2 Wins")
+                    counter += 1
+        self.winning_player()
 
     def player_vs_computer(self):
-        self.player_1_gesture_selection()
-        self.computer_gesture_selection()
-
+        counter=0
         while self.computer_points < 2 and self.player_1_points < 2:
-            self.number_difference = (int(self.gesture_selection) - int(self.player_1_selection)) % 5   
+            self.player_1_gesture_selection()
+            self.computer_gesture_selection()
+            self.number_difference = (self.computer_selection[counter] - self.player_1_selection[counter]) % 5   
 
             if self.number_difference == 0:
                    print("Tie try again!")
+                   counter += 1 
             elif self.number_difference == 1 or self.number_difference == 2:
-                    self.computer_points + 1  
-                    print("Computer Wins") 
+                    self.computer_points += 1  
+                    print("Computer Wins")
+                    counter += 1
             elif self.number_difference == 3 or self.number_difference == 4:
-                    self.player_1_points + 1
-                    print("Human Wins")
+                    self.player_1_points += 1
+                    print("Player 1 wins")
+                    counter += 1 
+        self.winning_player()
 
+    def winning_player(self):
+        if self.player_1_points == 2:
+            print("Player 1 Wins Best of 3 Games!!!")
+        elif self.player_2_points == 2:
+            print("Player 2 Wins Best of 3 Games!!!")
+        elif self.computer_points == 2:
+            print("Computer Wins Best of 3 Games!!!")
