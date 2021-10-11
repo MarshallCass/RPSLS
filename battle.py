@@ -15,6 +15,7 @@ class Battle(Gestures):
         self.computer_points = 0
         self.player_1_points = 0
         self.player_2_points = 0
+        self.number_difference = 0
 
     def run_game(self):
         self.display_welcome()
@@ -42,14 +43,14 @@ class Battle(Gestures):
     def player_input(self):
         selection = False
         player_selection = input(
-            "Press 1 for Player vs Player or 2 for Player vs Computer")
+            "Press 1 for Player vs Player or 2 for Player vs Computer" " ")
         while selection == False:
             if player_selection == "1":
+                selection = True
                 self.player_vs_player()
-                selection = True
             elif player_selection == "2":
-                self.player_vs_computer()
                 selection = True
+                self.player_vs_computer()
             else:
                 print("not valid input")
 
@@ -57,11 +58,9 @@ class Battle(Gestures):
         self.player_1_gesture_selection()
         self.player_2_gesture_selection()
 
-        while self.player_1_points and self.player_2_points < 2:
-
+        while self.player_1_points < 2 and self.player_2_points < 2:
             self.number_difference = (
-                int(self.player_1_gesture_selection) - int(self.player_2_gesture_selection)) % 5
-
+                int(self.player_1_selection) - int(self.player_2_selection)) % 5
             if self.number_difference == 0:
                 print("Tie try again!")
             elif self.number_difference == 1 or self.number_difference == 2:
@@ -75,9 +74,9 @@ class Battle(Gestures):
         self.player_1_gesture_selection()
         self.computer_gesture_selection()
 
-        while self.computer_points and self.player_1_points < 2:
+        while self.computer_points < 2 and self.player_1_points < 2:
             self.number_difference = (
-                int(self.computer_gesture_selection) - int(self.player_1_gesture_selection)) % 5
+                int(self.gesture_selection) - int(self.player_1_selection)) % 5
 
             if self.number_difference == 0:
                 print("Tie try again!")
@@ -85,5 +84,5 @@ class Battle(Gestures):
                 self.computer_points + 1
                 print("Computer Wins")
             elif self.number_difference == 3 or self.number_difference == 4:
-                self.player_one_points + 1
+                self.player_1_points + 1
                 print("Human Wins")

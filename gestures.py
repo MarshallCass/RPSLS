@@ -19,14 +19,16 @@ class Gestures:
         # self.player_1_selection = input("0 - rock , 1 - spock, 2 - paper, 3 - lizard, 4 - scissors ")
         self.gesture_input = False
         self.gesture_selection = int(
-            input('Player 1 choose: Rock-0, Paper-1, Scissors-2, Lizard-3, Spock-4'))
+            input('Player 1 choose: Rock-0, Paper-1, Scissors-2, Lizard-3, Spock-4' " "))
         while self.gesture_input != True:
             if self.gesture_selection == 0 or self.gesture_selection == 1 or self.gesture_selection == 2 or self.gesture_selection == 3 or self.gesture_selection == 4:
                 self.gesture_input = True
+                print('this is ok number')
             else:
                 print('Your selection was invalid')
+            
         if self.gesture_selection == 0:
-            self.player_1_selection.append("Rock")
+            self.player_1_selection.append(int(0))
         elif self.gesture_selection == 1:
             self.player_1_selection.append("Paper")
         elif self.gesture_selection == 2:
@@ -50,17 +52,18 @@ class Gestures:
         # elif self.computer_gesture_selection =="scissors" or "4" : 4
         # else: print("Error on name.")
          
-            self.computer_selection = random.randint(0,4)
+            # self.computer_selection = random.randint(0,4)
 
     def player_2_gesture_selection(self):
         # print("Player 2 enter your gesture name or number!")
         # self.player_two_selection = input("0 - rock , 1 - spock, 2 - paper, 3 - lizard, 4 - scissors ")
         self.gesture_input = False
         self.gesture_selection = int(
-            input('Player 2 choose: Rock-0, Paper-1, Scissors-2, Lizard-3, Spock-4'))
+            input('Player 2 choose: Rock-0, Paper-1, Scissors-2, Lizard-3, Spock-4' " "))
         while self.gesture_input != True:
             if self.gesture_selection == 0 or self.gesture_selection == 1 or self.gesture_selection == 2 or self.gesture_selection == 3 or self.gesture_selection == 4:
                 self.gesture_input = True
+                print('this is ok number')
             else:
                 print('Your selection was invalid')
         if self.gesture_selection == 0:
@@ -89,8 +92,9 @@ class Gestures:
         # else: print("Error on name.")
 
     def computer_gesture_selection(self):
+        
         self.gesture_input = False
-        self.gesture_selection = random.randint(0, 4)
+        self.gesture_selection = random.randint(0,4)
         while self.gesture_input != True:
             if self.gesture_selection == 0 or self.gesture_selection == 1 or self.gesture_selection == 2 or self.gesture_selection == 3 or self.gesture_selection == 4:
                 self.gesture_input = True
@@ -98,12 +102,12 @@ class Gestures:
             else:
                 print('Your selection was invalid')
         if self.gesture_selection == 0:
-            self.computer_selection.append("Rock")
+            self.computer_selection.append(int(0))
         elif self.gesture_selection == 1:
-            self.computer_selection.append("Paper")
+            self.computer_selection.append(int(1))
         elif self.gesture_selection == 2:
-            self.computer_selection.append("Scissors")
+            self.computer_selection.append(int(2))
         elif self.gesture_selection == 3:
-            self.computer_selection.append("Lizard")
+            self.computer_selection.append(int(3))
         elif self.gesture_selection == 4:
-            self.computer_selection.append("Spock")
+            self.computer_selection.append(int(4))
