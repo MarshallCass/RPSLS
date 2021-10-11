@@ -1,7 +1,7 @@
 from gestures import Gestures
 
 
-class Human(Gestures):
+class Human:
     def __init__(self, name):
         self.player = name
         self.points = 0
